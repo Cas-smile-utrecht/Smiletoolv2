@@ -10,14 +10,7 @@ import streamlit as st
 # Functie om CSV-bestanden in te lezen
 def read_csv(file):
     try:
-        df = pd.read_csv(
-            file,
-            sep=None,
-            engine='python',
-            on_bad_lines='skip',
-            quotechar='"',
-            quoting=csv.QUOTE_MINIMAL
-        )
+        df = pd.read_csv(file, sep=None, engine='python', on_bad_lines='skip')
         st.write(f"Succesvol ingelezen: {file.name}")
         return df
     except Exception as e:
